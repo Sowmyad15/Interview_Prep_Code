@@ -1,3 +1,41 @@
+""" APPEND
+        fix head as current
+        if head is present--> while current.next end of list, current.next=new_node 
+        else set self.head as new_node
+        
+    DELETE
+        fix head as current
+        if current.data==value aka head-->self.head=current.next
+        else (if not head)
+            while current:
+                if current.data==value:
+                    break
+            prev=current
+            current=current.next
+        if current=None--->no element of the list
+            return
+        prev.next=current.next
+        current=None
+    
+    INSERT  
+        current=self.head
+        if position==1:
+            new_node.next=self.head and self.head=new_node
+        count=1
+        while current:
+            if count+1==position:
+                new_element.next=current.next
+                current.next=new_element
+                return
+            else:
+                count+1
+                current=current.next
+
+            """
+
+
+
+
 class Node:
     def __init__(self, data):
         self.data=data
