@@ -24,7 +24,7 @@ while r<x-1:
     if a[l]<a[r]:
         max_profit=max(curr_profit,max_profit)
     else:
-        l=l+1
+        l=r
     r=r+1
 
 print("Max profit:")

@@ -8,5 +8,6 @@ ans=ans[::-1]
 b="".join(i for i in ans)
 print(b)
 
+#No.of ones
 count=ans.count('1')
 print(count)
