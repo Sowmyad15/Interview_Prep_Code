@@ -4,20 +4,16 @@ class Solution(object):
         :type s: str
         :rtype: int
         """
-        n = len(s)
-        maxLength = 0
-        charMap = {}
-        left = 0
-        for right in range(n):
-            if s[right] not in charMap or charMap[s[right]] < left:
-                charMap[s[right]] = right
-                maxLength = max(maxLength, right - left + 1)
-            else:
-                left = charMap[s[right]] + 1
-                charMap[s[right]] = right
+        l = 0
+        d = {}
+        length = 0
         
-        return maxLength
+        for r in range(len(s)):
+            c = s[r]
+            if c in d and d[c] >= l:  # If the character is already in the current window
+                l = d[c] + 1  # Move the left pointer to avoid repeating the character
             
-
+            d[c] = r  # Update the position of the character
+            length = max(length, r - l + 1)  # Calculate the maximum length
         
-        
+        return length
